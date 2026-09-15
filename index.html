@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jacek Yang — Systems / Network / Security / AI</title>
+    <meta
+      name="description"
+      content="Interactive portfolio of Jacek Yang — Rust systems developer: networking, proxy protocols, reverse engineering, cryptography and agent tooling."
+    />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#05070d" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+
+    <!-- OpenGraph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jacek Yang — Systems / Network / Security / AI" />
+    <meta
+      property="og:description"
+      content="Rust systems developer — networking, reverse engineering, cryptography and agent tooling."
+    />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://jacek4yang.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script>
+      // Resolve scroll animation preference before first paint of animated UI.
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.dataset.reducedMotion = "true";
+      }
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <!-- Boot sequence: non-blocking, dismisses itself -->
+    <div id="boot" aria-hidden="true">
+      <pre id="boot-log"></pre>
+    </div>
+
+    <canvas id="field" aria-hidden="true"></canvas>
+
+    <header class="hud" role="banner">
+      <span class="hud-id">JY<span class="hud-cursor">▊</span></span>
+      <nav class="hud-nav" aria-label="Sections">
+        <a href="#projects">projects</a>
+        <a href="#system-map">system-map</a>
+        <a href="#terminal">terminal</a>
+        <a href="#contact">contact</a>
+      </nav>
+      <span class="hud-clock" id="hud-clock" aria-hidden="true">--:--:--</span>
+    </header>
+
+    <main id="content">
+      <section class="hero" aria-label="Introduction">
+        <h1 class="hero-title">JACEK YANG</h1>
+        <p class="hero-sub" aria-label="Disciplines">
+          <span>SYSTEMS</span><i>/</i><span>NETWORK</span><i>/</i><span>SECURITY</span><i>/</i><span>AI</span>
+        </p>
+        <p class="hero-line">Building fast systems and tools close to the metal.</p>
+        <a class="hero-cta" href="#projects">scroll ↓ projects</a>
+      </section>
+
+      <section id="projects" class="section" aria-labelledby="projects-h">
+        <h2 class="section-h" id="projects-h">
+          <span class="sec-num">01</span> PROJECTS
+          <span class="sec-meta">evidence-based, not description-based</span>
+        </h2>
+        <div class="cards" id="cards"><!-- populated from src/data/projects.ts --></div>
+      </section>
+
+      <section id="system-map" class="section" aria-labelledby="sysmap-h">
+        <h2 class="section-h" id="sysmap-h"><span class="sec-num">02</span> SYSTEM MAP</h2>
+        <p class="section-p">
+          Every repository as a node, grouped by domain. Click a node to open the
+          repository. The graph reflects what the code actually is, not what a
+          description claims.
+        </p>
+        <div class="sysmap-wrap">
+          <svg id="sysmap" viewBox="0 0 900 520" role="img" aria-label="Interactive graph of repositories grouped by domain: network, crypto, reverse, agents, tools"></svg>
+          <div id="sysmap-tip" class="sysmap-tip" role="status" hidden></div>
+        </div>
+      </section>
+
+      <section id="terminal" class="section" aria-labelledby="term-h">
+        <h2 class="section-h" id="term-h"><span class="sec-num">03</span> TERMINAL</h2>
+        <div id="term" class="term" role="region" aria-label="Interactive navigation terminal">
+          <div class="term-bar"><span class="term-dot"></span>jacek@j4y — jterm v1.0</div>
+          <div class="term-out" id="term-out" aria-live="polite"></div>
+          <div class="term-in-row">
+            <label class="term-prompt" for="term-in">jacek@j4y:~$</label>
+            <input id="term-in" class="term-in" type="text" autocomplete="off"
+                   spellcheck="false" aria-label="Terminal command input" />
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact" aria-labelledby="contact-h">
+        <h2 class="section-h" id="contact-h"><span class="sec-num">04</span> CONTACT</h2>
+        <p class="section-p">The fastest route is a GitHub issue or discussion on any repository below.</p>
+        <div class="contact-links">
+          <a href="https://github.com/jacek4yang">github.com/jacek4yang ↗</a>
+          <a href="https://github.com/jacek4yang?tab=repositories">repositories ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Jacek Yang</span>
+      <span class="footer-meta">hand-rolled · no framework · &lt;30 kB gzipped JS</span>
+    </footer>
+  </body>
+</html>

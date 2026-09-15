@@ -1,0 +1,16 @@
+{
+  "name": "jacek4yang-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Interactive systems portfolio for jacek4yang",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vite": "^6.0.0"
+  }
+}
